@@ -1,0 +1,56 @@
+﻿using ForecastIO;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace WeatherApp.Models
+{
+    public class CurrentWeather
+    {
+        public string Summary { get; set; }
+        public float Temperature { get; set; }
+        public float ApparentTemperature { get; set; }
+        public float Humidity { get; set; }
+        public string Icon { get; set; }
+        public string PrecipType { get; set; }
+        public float PrecipProbability { get; set; }
+        public float PrecipIntensity { get; set; }
+        public float WindBearing { get; set; }
+        public float WindSpeed { get; set; }
+        public float NearestStormBearing { get; set; }
+        public float NearestStormDistance { get; set; }
+
+        public CurrentWeather()
+        {
+            //var request = new ForecastIORequest("cd912c61ab0c9a4ccc75e7cf6f91adba", 37.3058333f, -89.5180556f, Unit.us);
+            //var response = request.Get();
+
+            //this.Summary = response.currently.summary;
+            //this.Temperature = response.currently.temperature;
+            //this.ApparentTemperature = response.currently.apparentTemperature;
+            //this.Humidity = response.currently.humidity;
+            //this.Icon = response.currently.icon;
+            //this.PrecipType = response.currently.precipType;
+            //this.PrecipProbability = response.currently.precipProbability;
+            //this.PrecipIntensity = response.currently.precipIntensity;
+            //this.WindBearing = response.currently.windBearing;
+            //this.WindSpeed = response.currently.windSpeed;
+            //this.NearestStormBearing = response.currently.nearestStormBearing;
+            //this.NearestStormDistance = response.currently.nearestStormDistance;
+
+            this.Summary = "Rainy";
+            this.Temperature = 70f;
+            this.ApparentTemperature = 70f;
+            this.Humidity = .90f;
+            this.Icon = "rain";
+            this.PrecipType = "rain";
+            this.PrecipProbability = 1f;
+            this.PrecipIntensity = .1f;
+            this.WindBearing = 270f;
+            this.WindSpeed = 5f;
+            this.NearestStormBearing = 270f;
+            this.NearestStormDistance = 100f;
+        }
+    }
+}
