@@ -22,4 +22,22 @@
         Wind: <i class="wi @Html.DisplayTextFor(Model => Model.WindBearingIcon)" style="font-size:20px; margin-top:-40px; margin-bottom: -40px;"></i> at @Html.DisplayTextFor(Model => Model.WindSpeed) MPH (@Html.DisplayTextFor(Model => Model.WindBearing))<br /> 
         Nearest Storm: <i class="wi @Html.DisplayTextFor(model => model.NearestStormBearingIcon)" style="font-size:20px; margin-top:-40px;"></i> - @Html.DisplayTextFor(model => model.NearestStormDistance) Miles Away. (@Html.DisplayTextFor(model => model.NearestStormBearing))
     </div>
-</div>
+</div><br />
+<button class="js-houry">Hourly</button><br />
+<div id="HourlyDiv"></div>
+
+
+<script>
+    $(document).ready(function () {
+        $('.js-houry').click(function (evt) {
+            evt.stopPropagation();
+            var hourlyDiv = $('#HourlyDiv');
+
+            var url = '@Url.Action("Hourly", "Weather")';
+
+            $.get(url).success(function (results) {
+                hourlyDiv.html(results);
+            });
+        });
+    });
+</script>

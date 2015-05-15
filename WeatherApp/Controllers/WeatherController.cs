@@ -18,5 +18,11 @@ namespace WeatherApp.Controllers
         {
             return View(new Models.CurrentWeather());
         }
+
+        public ActionResult Hourly()
+        {
+            Models.HourlyForecast model = new Models.HourlyForecast();
+            return PartialView("_Hourly", model);
+        }
     }
 }
