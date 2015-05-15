@@ -11,7 +11,7 @@
         Feels like: <span class="apparent">@Html.DisplayTextFor(model => model.ApparentTemperature)&deg;</span>
     </div>
     <div class="weatherIcon">
-        <i class="wi @Html.DisplayTextFor(model => model.Icon)" style="margin-top: -50px;"></i>
+        <i class="wi @Html.DisplayTextFor(model => model.Icon)" style="margin-top: -50px; margin-bottom:-50px"></i>
     </div>
     <div class="summary">
         <span>@Html.DisplayTextFor(model => model.Summary) </span>
@@ -19,7 +19,7 @@
     <div class="details">
         Humidity: @Html.DisplayTextFor(model => model.HumidityFormat) <br />
         Precip Chance: @Html.DisplayTextFor(model => model.PrecipProbabilityFormat)<br />
-        Wind: <i class="wi @Html.DisplayTextFor(Model => Model.WindBearingIcon)"></i> at @Html.DisplayTextFor(Model => Model.WindSpeed) MPH (@Html.DisplayTextFor(Model => Model.WindBearing))<br /> 
-        Nearest Storm: <i class="wi @Html.DisplayTextFor(model => model.NearestStormBearingIcon)"></i> - @Html.DisplayTextFor(model => model.NearestStormDistance) Miles Away. (@Html.DisplayTextFor(model => model.NearestStormBearing))
+        Wind: <i class="wi @Html.DisplayTextFor(Model => Model.WindBearingIcon)" style="font-size:20px; margin-top:-40px; margin-bottom: -40px;"></i> at @Html.DisplayTextFor(Model => Model.WindSpeed) MPH (@Html.DisplayTextFor(Model => Model.WindBearing))<br /> 
+        Nearest Storm: <i class="wi @Html.DisplayTextFor(model => model.NearestStormBearingIcon)" style="font-size:20px; margin-top:-40px;"></i> - @Html.DisplayTextFor(model => model.NearestStormDistance) Miles Away. (@Html.DisplayTextFor(model => model.NearestStormBearing))
     </div>
 </div>
