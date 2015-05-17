@@ -56,18 +56,18 @@ namespace WeatherApp.Models
         }
 
         public Hourly(int _hour, string _summary, string _icon, float _temperature, 
-            float _apparentTemperature, float _humidity, float _windBearing, 
-            string _windBearingIcon, float _windSpeed, float _precipProbabilty,
+            float _apparentTemperature, float _humidity, float _windBearing, float _windSpeed, float _precipProbabilty,
             string _precipType, float _precipIntensity)
         {
             this.Hour = _hour;
             this.Summary = _summary;
-            this.Icon = _icon;
+            this.Icon = Helper.Instance.GetIconName(_icon);
             this.Temperature = _temperature;
             this.ApparentTemperature = _apparentTemperature;
             this.Humidity = _humidity;
             this.WindBearing = _windBearing;
-            this.WindBearingIcon = _windBearingIcon;
+            this.WindBearingIcon = Helper.Instance.GetDirectionIcon(this.WindBearing);
+            this.WindSpeed = _windSpeed;
             this.PrecipProbability = _precipProbabilty;
             this.PrecipType = _precipType;
             this.PrecipIntensity = _precipIntensity;

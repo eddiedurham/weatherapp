@@ -39,3 +39,15 @@ textarea {
     width:100%;
     position: relative;
 }
+
+.hourly {
+
+}
+
+.hourly td {
+    text-align:center;
+    min-width:75px;
+}
+.hourly .hLabel {
+    font-size:10px;
+}
