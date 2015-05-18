@@ -10,5 +10,10 @@ namespace WeatherApp.OpenStreetMap
     {
         public float lat;
         public float lon;
+
+        public override string ToString()
+        {
+            return lat.ToString() + "," + lon.ToString();
+        }
     }
 }

@@ -93,5 +93,22 @@ namespace WeatherApp
             dtDateTime = dtDateTime.AddSeconds(ticks).ToLocalTime();
             return dtDateTime;
         }
+
+        public float[] RandomLatLon()
+        {
+            float[] latLon = { RandomFloat(90.0), RandomFloat(180.0) };
+            return latLon;
+
+        }
+        public float RandomFloat(double max)
+        {
+            Random random = new Random(DateTime.Now.Millisecond);
+            double mantissa = (random.NextDouble() * max);
+            int sign = random.Next(1, 1000) & 2;
+
+            if (sign != 0) mantissa = mantissa * -1;
+
+            return (float)mantissa;
+        }
     }
 }

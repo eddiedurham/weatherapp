@@ -60,7 +60,6 @@ C:\Users\johnedurham\documents\visual studio 2013\Projects\WeatherApp\WeatherApp
 C:\Users\johnedurham\documents\visual studio 2013\Projects\WeatherApp\WeatherApp\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\johnedurham\documents\visual studio 2013\Projects\WeatherApp\WeatherApp\obj\Debug\WeatherApp.dll
 C:\Users\johnedurham\documents\visual studio 2013\Projects\WeatherApp\WeatherApp\obj\Debug\WeatherApp.pdb
-C:\Users\johnedurham\documents\visual studio 2013\Projects\WeatherApp\WeatherApp\obj\Debug\WeatherApp.csprojResolveAssemblyReference.cache
 C:\Users\T-bobby\Documents\Visual Studio 2013\Projects\weatherapp\WeatherApp\obj\Debug\WeatherApp.dll
 C:\Users\T-bobby\Documents\Visual Studio 2013\Projects\weatherapp\WeatherApp\obj\Debug\WeatherApp.pdb
 C:\Users\T-bobby\Documents\Visual Studio 2013\Projects\weatherapp\WeatherApp\bin\WeatherApp.dll.config

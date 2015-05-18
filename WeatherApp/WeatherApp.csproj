@@ -167,23 +167,19 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
-    <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\WeatherController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helper.cs" />
-    <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CurrentWeather.cs" />
     <Compile Include="Models\DayForecast.cs" />
     <Compile Include="Models\Hourly.cs" />
     <Compile Include="Models\HourlyForecast.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\OpenStreetMap.cs" />
     <Compile Include="Models\WeekForecast.cs" />
     <Compile Include="OpenStreetMap\NominatimRequest.cs" />
     <Compile Include="OpenStreetMap\NominatimResponse.cs" />
@@ -226,25 +222,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
-    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
-    <Content Include="Views\Account\_RemoveAccountPartial.cshtml" />
-    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
-    <Content Include="Views\Account\ConfirmEmail.cshtml" />
-    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
-    <Content Include="Views\Account\ForgotPassword.cshtml" />
-    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Manage.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Account\ResetPassword.cshtml" />
-    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
-    <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Weather\Current.cshtml" />
     <Content Include="WeatherIcons\bower.json" />
     <Content Include="WeatherIcons\css\README.md" />
@@ -260,6 +238,8 @@
     <Content Include="WeatherIcons\weather-icons\weather-icons.min.less" />
     <Content Include="Views\Weather\_Hourly.cshtml" />
     <Content Include="Views\Weather\Forecast.cshtml" />
+    <Content Include="Views\Weather\LocationSearch.cshtml" />
+    <Content Include="Views\Weather\LocationError.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -62,22 +62,28 @@ namespace WeatherApp.Models
             this.NearestStormDistance = response.currently.nearestStormDistance;
 
             this.Hourly = new HourlyForecast(response.hourly);
+        }
+        public CurrentWeather(float lat, float lon)
+        {
+            var request = new ForecastIORequest("cd912c61ab0c9a4ccc75e7cf6f91adba", lat, lon, Unit.us);
+            var response = request.Get();
 
-            var nomRequest = new NominatimRequest("", "", "", "", "", "63703");
-            var nomResponse = nomRequest.Get();
+            this.Summary = response.currently.summary;
+            this.Temperature = response.currently.temperature;
+            this.ApparentTemperature = response.currently.apparentTemperature;
+            this.Humidity = response.currently.humidity;
+            this.Icon = Helper.Instance.GetIconName(response.currently.icon);
+            this.PrecipType = response.currently.precipType;
+            this.PrecipProbability = response.currently.precipProbability;
+            this.PrecipIntensity = response.currently.precipIntensity;
+            this.WindBearing = response.currently.windBearing;
+            this.WindBearingIcon = Helper.Instance.GetDirectionIcon(this.WindBearing);
+            this.WindSpeed = response.currently.windSpeed;
+            this.NearestStormBearing = response.currently.nearestStormBearing;
+            this.NearestStormBearingIcon = Helper.Instance.GetDirectionIcon(this.NearestStormBearing);
+            this.NearestStormDistance = response.currently.nearestStormDistance;
 
-            //this.Summary = "Rainy";
-            //this.Temperature = 70f;
-            //this.ApparentTemperature = 70f;
-            //this.Humidity = .90f;
-            //this.Icon = "wi-day-rain";
-            //this.PrecipType = "rain";
-            //this.PrecipProbability = 1f;
-            //this.PrecipIntensity = .1f;
-            //this.WindBearing = 270f;
-            //this.WindSpeed = 5f;
-            //this.NearestStormBearing = 270f;
-            //this.NearestStormDistance = 100f;
+            this.Hourly = new HourlyForecast(response.hourly);
         }
     }
 }

@@ -8,9 +8,6 @@
     @Styles.Render("~/WeatherIcons/css/weather-icons.css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/Scripts/jquery-1.10.2.js")
-    
-    
-
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -27,6 +24,9 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Current Weather", "Current", "Weather")</li>
                     <li>@Html.ActionLink("Forecast", "Forecast", "Weather")</li>
+                    <li>@Html.ActionLink("Change Location", "LocationSearch", "Weather")</li>
+                    <li><a href="/MyWeather/Weather/random/Current">Random Current Weather</a></li>
+                    <li><a href="/MyWeather/Weather/random/Forecast">Random Weather Forecast</a></li>
                 </ul>
             </div>
         </div>

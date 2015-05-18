@@ -1,0 +1,49 @@
+﻿@model WeatherApp.Models.OpenStreetMap
+@{
+    ViewBag.Title = "Location Search";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>LocationSearch</h2>
+
+@using(Html.BeginForm("FindLocation", "Weather", FormMethod.Post)){
+<table>
+    <tr>
+        <td>
+            @Html.LabelFor(model => model.Street)
+        </td>
+        <td>
+            @Html.TextBoxFor(model => model.Street)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.LabelFor(model => model.City)
+        </td>
+        <td>
+            @Html.TextBoxFor(model => model.City)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.LabelFor(model => model.State)
+        </td>
+        <td>
+            @Html.TextBoxFor(model => model .State)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.LabelFor(model => model.PostalCode)
+        </td>
+        <td>
+            @Html.TextBoxFor(model => model.PostalCode)
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <input type="submit" value="Search" />
+        </td>
+    </tr>
+</table>
+}
