@@ -1,4 +1,4 @@
-﻿@model WeatherApp.Models.CurrentWeather 
+﻿@model WeatherApp.Models.CurrentWeather
 @{
     ViewBag.Title = "Current Weather";
 }
@@ -7,8 +7,8 @@
 
 <div class="quickWeather">
     <div class="temperature">
-        <span class="actual">@Html.DisplayTextFor(model => model.Temperature)&deg;</span><br />
-        Feels like: <span class="apparent">@Html.DisplayTextFor(model => model.ApparentTemperature)&deg;</span>
+        <span class="actual">@Html.DisplayTextFor(model => model.Temperature)&deg; F</span><br />
+        Feels like: <span class="apparent">@Html.DisplayTextFor(model => model.ApparentTemperature)&deg; F</span>
     </div>
     <div class="weatherIcon">
         <i class="wi @Html.DisplayTextFor(model => model.Icon)" style="margin-top: -50px; margin-bottom:-50px"></i>
@@ -19,25 +19,24 @@
     <div class="details">
         Humidity: @Html.DisplayTextFor(model => model.HumidityFormat) <br />
         Precip Chance: @Html.DisplayTextFor(model => model.PrecipProbabilityFormat)<br />
-        Wind: <i class="wi @Html.DisplayTextFor(Model => Model.WindBearingIcon)" style="font-size:20px; margin-top:-40px; margin-bottom: -40px;"></i> at @Html.DisplayTextFor(Model => Model.WindSpeed) MPH (@Html.DisplayTextFor(Model => Model.WindBearing))<br /> 
-        Nearest Storm: <i class="wi @Html.DisplayTextFor(model => model.NearestStormBearingIcon)" style="font-size:20px; margin-top:-40px;"></i> - @Html.DisplayTextFor(model => model.NearestStormDistance) Miles Away. (@Html.DisplayTextFor(model => model.NearestStormBearing))
+        Wind: <i class="wi @Html.DisplayTextFor(model => model.WindBearingIcon)" style="font-size:20px; margin-top:-40px; margin-bottom: -40px;"></i> at @Html.DisplayTextFor(model => model.WindSpeed) MPH <br />
+        Nearest Storm: <i class="wi @Html.DisplayTextFor(model => model.NearestStormBearingIcon)" style="font-size:20px; margin-top:-40px;"></i> - @Html.DisplayTextFor(model => model.NearestStormDistance) Miles Away.
     </div>
 </div><br />
-<button class="js-houry">Hourly</button><br />
-<div id="HourlyDiv"></div>
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="hourlyHeading">
+            <h4 class="panel-title">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#hourlyBody" aria-expanded="false" aria-controls="hourlyBody">
+                    Hourly Forecast
+                </a>
+            </h4>
+        </div>
+        <div id="hourlyBody" class="panel-collapse collapse" role="tabpanel" aria-labelledby="hourlyHeading">
+            <div class="panel-body" id="HourlyDiv">
+                @{Html.RenderPartial("_Hourly", Model.Hourly);}
+            </div>
+        </div>
+    </div>
+</div>
 
-
-<script>
-    $(document).ready(function () {
-        $('.js-houry').click(function (evt) {
-            evt.stopPropagation();
-            var hourlyDiv = $('#HourlyDiv');
-
-            var url = '@Url.Action("Hourly", "Weather")';
-
-            $.get(url).success(function (results) {
-                hourlyDiv.html(results);
-            });
-        });
-    });
-</script>

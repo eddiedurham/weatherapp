@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using WeatherApp.OpenStreetMap;
 
 namespace WeatherApp.Models
 {
@@ -22,6 +23,7 @@ namespace WeatherApp.Models
         public float NearestStormBearing { get; set; }
         public string NearestStormBearingIcon { get; private set; }
         public float NearestStormDistance { get; set; }
+        public HourlyForecast Hourly { get; set; }
 
         public string HumidityFormat
         {
@@ -58,6 +60,11 @@ namespace WeatherApp.Models
             this.NearestStormBearing = response.currently.nearestStormBearing;
             this.NearestStormBearingIcon = Helper.Instance.GetDirectionIcon(this.NearestStormBearing);
             this.NearestStormDistance = response.currently.nearestStormDistance;
+
+            this.Hourly = new HourlyForecast(response.hourly);
+
+            var nomRequest = new NominatimRequest("", "", "", "", "", "63703");
+            var nomResponse = nomRequest.Get();
 
             //this.Summary = "Rainy";
             //this.Temperature = 70f;

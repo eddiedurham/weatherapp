@@ -10,6 +10,7 @@ namespace WeatherApp.Controllers
     {
         public ActionResult Index()
         {
+            Redirect("~/Weather/Current");
             return View();
         }
 

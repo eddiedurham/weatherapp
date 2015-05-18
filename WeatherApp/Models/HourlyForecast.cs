@@ -27,5 +27,18 @@ namespace WeatherApp.Models
                 Forecast.Add(h);
             }
         }
+
+        public HourlyForecast(ForecastIO.Hourly forecast)
+        {
+            Forecast = new List<Hourly>();
+
+            for (int i = 0; i < 24; i++)
+            {
+                ForecastIO.HourForecast hf = forecast.data[i];
+                DateTime t = Helper.Instance.ConvertUNIXToLocalTime(hf.time);
+                Hourly h = new Hourly(t.Hour, hf.summary, hf.icon, hf.temperature, hf.apparentTemperature, hf.humidity, hf.windBearing, hf.windSpeed, hf.precipProbability, hf.precipType, hf.precipIntensity);
+                Forecast.Add(h);
+            }
+        }
     }
 }

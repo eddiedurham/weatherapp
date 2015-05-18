@@ -55,7 +55,7 @@ namespace WeatherApp
                     result = "wi-day-sunny-overcast";
                     break;
                 case "partly-cloudy-night":
-                    result = "night-partly-cloudy";
+                    result = "wi-night-partly-cloudy";
                     break;
                 default:
                     result = "wi-alien";

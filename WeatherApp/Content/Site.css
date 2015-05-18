@@ -16,7 +16,7 @@ textarea {
     max-width: 280px;
 }
 .quickWeather {
-    width: 400px;
+
 }
 .quickWeather .temperature {
     width:200px;
@@ -27,7 +27,7 @@ textarea {
     font-size:30px;
 }
 
- .quickWeather.temperature .apparent {
+ .quickWeather .temperature .apparent {
     font-size: 20px;
 }
 
@@ -51,3 +51,44 @@ textarea {
 .hourly .hLabel {
     font-size:10px;
 }
+
+.forecast{
+    padding:10px;
+}
+
+.forecast .summary{
+    padding-top:10px;
+    padding-bottom:10px;
+}
+.forecast .fTemp{
+    font-size:20px;
+    float:left;
+    position:relative;
+    top:0px;
+    display:inline-block;
+    width:150px;
+}
+
+    .forecast .fWeatherIcon {
+        font-size: 50px;
+        position: relative;
+        display:inline;
+    }
+    .forecast .sunrise{
+        display:inline-block;
+    }
+    .forecast .sunset{
+        display:inline-block;
+    }
+    .forecast .sunPhaseDivide{
+        display:inline-block;
+        width: 50px;
+    }
+    .forecast .sunPhase{
+        font-size: 30px;
+        line-height: 30px;
+    }
+
+    /*.forecast .fLabel{
+        font-size:10px;
+    }*/

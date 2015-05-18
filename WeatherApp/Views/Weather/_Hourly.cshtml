@@ -1,5 +1,5 @@
 ﻿<table class="hourly">
-    @for(var i = 0; i < Model.Forecast.Count; i++)
+    @for (var i = 0; i < Model.Forecast.Count; i++)
     {
         var h = Model.Forecast[i];
         var color = "#fff";
@@ -13,7 +13,7 @@
                 <td rowspan="2" class="hour">
                     @h.HourFormat
                 </td>
-                <td class="temperature">@h.Temperature <br /><span class="hLabel">Temp</span></td>
+                <td class="temperature" rowspan="2">@h.Temperature&deg; F <br /><span class="hLabel">Temp</span></td>
                 <td class="icon">
                     <i class="wi @h.Icon" style="font-size: 25px; line-height:25px;"></i>
                 </td>
@@ -23,16 +23,14 @@
                 </td>
             </tr>
             <tr style="background-color:@color;">
-                <td>@h.ApparentTemperature <br /> <span class="hLabel">Feels Like</span>
-</td>
                 <td>
                     <i class="wi @h.WindBearingIcon" style="font-size: 20px; line-height:20px;"></i> @h.WindSpeed <br />
                     <span class="hLabel">Wind</span>
-</td>
+                </td>
                 <td>
                     @h.HumidityFormat<br />
                     <span class="hLabel">Humidity</span>
-</td>
+                </td>
             </tr>
         </text>
     }

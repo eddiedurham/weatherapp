@@ -1,0 +1,71 @@
+﻿@model WeatherApp.Models.WeekForecast
+@{
+    ViewBag.Title = "Forecast";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Forecast</h2>
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    @{
+        var i = 0;
+    }
+    @foreach (WeatherApp.Models.DayForecast df in @Model.Week)
+    {
+        i = i + 1;
+        var headingID = "heading" + i.ToString();
+        var panelID = "collapse" + i.ToString();
+        var expanded = "true";
+
+        if (i > 1)
+        {
+            expanded = "false";
+        }
+        var aClass = "";
+        var panelClass = "panel-collapse collapse in";
+        if (expanded == "false")
+        {
+            aClass = "collapsed";
+            panelClass = "panel-collapse collapse";
+        }
+
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="@headingID">
+                <h4 class="panel-title">
+                    <a class="@aClass" data-toggle="collapse" data-parent="#accordion" href="#@panelID" aria-expanded="@expanded" aria-controls="@panelID">
+                        @df.Date.ToLongDateString()
+                    </a>
+                </h4>
+            </div>
+            <div id="@panelID" class="@panelClass" role="tabpanel" aria-labelledby="@headingID">
+                <div class="panel-body forecast">
+                    <div class="fTemp">
+                        <span class="actual">@df.HighTemperature&deg; F /<br /> @df.LowTemperature&deg; F</span>
+                    </div>
+                    <div class="fWeatherIcon">
+                        <i class="wi @df.Icon" style="line-height:50px;"></i>
+                    </div>
+                    <div class="summary">
+                        <span>@df.Summary </span>
+                    </div>
+                    <div class="sunrise">
+                        <i class="wi wi-sunrise sunPhase"></i><br />
+                        <span>@df.SunRise.ToShortTimeString()</span>
+                    </div>
+                    <div class="sunPhaseDivide">
+                        <hr style="border-top-color:#000" />
+                    </div>
+                    <div class="sunset">
+                        <i class="wi wi-sunset sunPhase"></i><br />
+                        <span>@df.SunSet.ToShortTimeString()</span>
+                    </div>
+                    <div class="details">
+                        Humidity: @df.HumidityFormat <br />
+                        Precip Chance: @df.PrecipProbabilityFormat<br />
+                        Wind: <i class="wi @df.WindBearingIcon" style="font-size:20px; margin-top:-40px; margin-bottom: -40px;"></i> at @df.WindSpeed MPH <br />
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    }
+</div>
